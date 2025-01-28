@@ -1,0 +1,60 @@
+github grafy one-stage a two-stage: https://github.com/yehengchen/Object-Detection-and-Tracking/blob/master/Two-stage%20vs%20One-stage%20Detectors.md
+
+[1] hlavní review: https://www.sciencedirect.com/science/article/pii/S1051200422004298#br0020
+
+[2] https://www.mdpi.com/2072-4292/13/1/89#
+
+[3] Deep Learning for Generic Object Detection: A Survey: file:///C:/Users/jirka/Downloads/s11263-019-01247-4.pdf
+
+[4] https://medium.com/@kattarajesh2001/object-detection-part-2-two-stage-detectors-r-cnn-fast-r-cnn-faster-r-cnn-026e5fac5dd0
+	obrázky: one-stage, two-stage schema
+		 RCNN steps schema
+			
+[5] https://www.jeremyjordan.me/object-detection-one-stage/#ssd
+
+[6] https://pdf.sciencedirectassets.com/271506/1-s2.0-S0957417421X00048/1-s2.0-S0957417421000439/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjELP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQC5wry4P6vYTex1eryT%2FgJDS4Gvxew9y52B6KjCDZ1o3QIgDwZRafDTv6uqTSbmSkkLHYnDFdqYRZ0JtJG1PT%2FNppsqugUIq%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAFGgwwNTkwMDM1NDY4NjUiDEzBiWCMeuyVYP2xUiqOBcfFH31U5XRUDbkt2eMkjpRCJenkEH9BUz%2FVKmJz5Ahmm8xZRFHEFWy15cjdU65gJNQJCGgPSwsUm1IjOTIkqYG0heNlRvAfvm0mW%2B4NVAeImh7LpRGRrYHmqgat3dx%2FfE2rQX3JgEqMYG9kgRZXF5A7awX%2BmerSJD2IxzucgCdJWkcjCzL0UHm88jbydSwQr35n64H9aGSX7DhMc3rHEmS7so5WTpUUyYGEmaBVodrwM59ouQ8sz12Bj441v%2Bl5CBypaHtCJZEs2fztgpq431p9ElI%2BDvm0YXvmm%2FH2HTePXXOdkoLvRBRTs5WqJ1%2BCCHGsp5kcF8UDisE1xbBZcij%2Bivr3tmyCCuoLW45NTmf4RpcQVFa0Qvsqf5ev0WPbFjjYQD6QzPPdc%2FbWoukY209%2FCryf0Fc91N9aKRQoQOTg%2FCjGr%2BWqgpWJlCL2qmt4sLa7LsUoakE3eB7FSIRObA185ZJwlhU%2BKxnj1x5dHpfsBKuoR%2FoaHEG2DAJG4dJHbBhBfQ%2Bz5ZnIFSWojD%2FLxWmXU5B%2BQBreHyKhMYF2NIP3rRWLntFP7nkA2Hb8TqfE5wTB11dU6UrhxiPF%2FHhirJekVdxpSZk7Wh9%2FWYQmhWv84leYU6sJj9pDaqPsYSi42MZvIB701lik6fYeEs76%2Flv23NwlbByErDdQiYzz7af%2F4bM0%2BlUMYCcRo0AGPrcRWebg7FJOIU666z9%2BvCZTYYnsv0f6IFP6c%2FM0T7C1woLDkbu2TXwP8W7GNSMEuMwVcDyuQ0LLRc5sEuEEbvTTkg0dB%2Fn%2FsUqmkz%2F9AHiEYMg3RVIJ5cxHypSYfHG0Fyc0QnCASCvc3eKwVfUnb8NZLRXKm3v31bC60XAi9SZJLjDVpbq8BjqxARDjl2q%2BpVNNrlSljxhdXZbFXIjYMLnbvEU3ADSA0PKF4S%2BNj1wmziwg%2Fu3JTIsKRJ0zspTVMRTf7mR4WGEKSKM0mcq%2BZ%2BsW7NnAY8YNON0qGtWZqq2n4OMclAoQsCDPB6kQ3XSh1ePi9AIgFPL6tpzxqDcClt%2FTHM52nH8mPXVaO5f%2Fi%2BsZCovVXPiyZN3jWC4MNdo6mWi4f2RwdSCKjO36CYbZBQyZU7M7I2t1kOKpng%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250120T192131Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTYRGC5EXOK%2F20250120%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=795d8660571cf3378fc8cf735f165793f453a769eccdbd764ee9a38f8021945d&hash=2f5e2071461297cf153faf9e812322a043b50f89927af97278dd0cfabfbf8f4c&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0957417421000439&tid=spdf-c1327ed1-b2fa-4a91-88ea-ff98682292c7&sid=1d9fe4359909c34f937aa7155f725e5dde9fgxrqa&type=client&tsoh=d3d3LnNjaWVuY2VkaXJlY3QuY29t&ua=051a5f54535359015a51&rr=90516d92ac9bf978&cc=cz
+
+[7] https://www.researchgate.net/publication/376252973_Enhancing_Real-time_Object_Detection_with_YOLO_Algorithm
+
+[8] https://www.researchgate.net/publication/372863351_A_Review_of_YOLO_Object_Detection_Algorithms_based_on_Deep_Learning
+
+[9] https://kili-technology.com/data-labeling/machine-learning/yolo-algorithm-real-time-object-detection-from-a-to-z#what-is-yolo?
+
+[10] https://www.v7labs.com/blog/yolo-object-detection
+
+[11] https://www.researchgate.net/figure/YOLO-v7-Tiny-network-architecture-The-backbone-is-composed-of-stacked-ELAN-Efficient_fig6_373041501
+
+[12] https://www.analyticsvidhya.com/blog/2024/10/yolov11/
+
+[13] https://www.v7labs.com/blog/yolo-object-detection
+
+[14] https://arxiv.org/pdf/2307.02694
+
+[15] https://www.ultralytics.com/glossary/loss-function
+
+[16] https://www.educative.io/answers/how-does-yolo-loss-work
+
+[17] https://www.researchgate.net/publication/354846944_Investigation_of_YOLOv5_Efficiency_in_iPhone_Supported_Systems
+
+[18] https://jonathan-hui.medium.com/understanding-feature-pyramid-networks-for-object-detection-fpn-45b227b9106c
+
+[19] https://arxiv.org/pdf/1612.03144
+
+[20] https://theses.hal.science/tel-04090134v1/file/98956_TESEMA_2022_archivage.pdf
+
+[21] https://towardsdatascience.com/explain-like-im-five-artificial-neurons-b7c475b56189
+
+[22] https://github.com/vdumoulin/conv_arithmetic?tab=readme-ov-file
+
+[23] https://www.researchgate.net/figure/Example-for-the-max-pooling-and-the-average-pooling-with-a-filter-size-of-22-and-a_fig15_337336341
+
+[24] https://lekhuyen.medium.com/an-overview-of-vgg16-and-nin-models-96e4bf398484
+
+[25] https://www.researchgate.net/publication/321829624_Leaf_App_Leaf_recognition_with_deep_convolutional_neural_networks
+
+[26] https://link.springer.com/content/pdf/10.1007/s11042-023-17949-4.pdf?utm_source=scopus&getft_integrator=scopus
+
+[27] https://www.researchgate.net/publication/329136041_Multiclass_Radio_Frequency_Interference_Detection_and_Suppression_for_SAR_Based_on_the_Single_Shot_MultiBox_Detector
+
+[28] https://www.researchgate.net/publication/350318395_Phenotypic_trait_extraction_of_soybean_plants_using_deep_convolutional_neural_networks_with_transfer_learning
+
