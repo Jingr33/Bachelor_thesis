@@ -1,0 +1,12 @@
+dataset
+dataset2
+future_dataset
+models
+runs
+ultralytics_env
+venv
+yolos
+jsons
+auto_annotater
+*.json
+config.yaml

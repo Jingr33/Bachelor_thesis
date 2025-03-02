@@ -1,0 +1,2 @@
+Cong, Xiaohan & Li, Shixin & Chen, Fankai & Liu, Chen & Meng, Yue. (2023). A Review of YOLO Object Detection Algorithms based on Deep Learning. Frontiers in Computing and Intelligent Systems. 4. 17-20. 10.54097/fcis.v4i2.9730. 
+
