@@ -1,0 +1,6 @@
+path: C:/python
+train: dataset\train\images
+test: dataset\test\images
+
+nc: 5
+names: ['glottic slit', 'left arytenoid', 'left vocal fold', 'right arytenoid', 'right vocal fold']
