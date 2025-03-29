@@ -2,9 +2,14 @@
 """
 
 import os
+import sys
+sys.path.append(r"C:\\Users\\ingrj\\AppData\\Roaming\\Python\\Python312\\site-packages")
 import numpy as np
 
-FOLDER = "p2r"
+
+# folder with polygon annotations in txt files
+PATH = "future_dataset/vid19_corr/labels"
+
 
 def _polygon2rectangle(annotation : str) -> str:
     poly_coords = annotation.replace("\n", "").split(" ")
@@ -22,13 +27,15 @@ def _polygon2rectangle(annotation : str) -> str:
     h = y_max - y_min
     return f"{annot_class} {x} {y} {w} {h}\n"
 
-for item in os.listdir(FOLDER):
-    file_path = os.path.join(FOLDER, item)
-    with open(file_path, "r+", encoding="utf-8") as file:
-        poly_annots = file.readlines()
-        rect_annots = ""
-        for annot in poly_annots:
-            rect_annots += _polygon2rectangle(annot)
-        file.seek(0)
-        file.write(rect_annots)
-        file.truncate()
+for file in os.listdir(PATH):
+    file_path = os.path.join(PATH, file)
+    POLY_ANNOTS = ""
+    with open(file_path, "r", encoding="utf-8") as file:
+        POLY_ANNOTS = file.readlines()
+
+    RECT_ANNOTS = ""
+    for annot in POLY_ANNOTS:
+        RECT_ANNOTS += _polygon2rectangle(annot)
+
+    with open(file_path, "w", encoding="utf-8") as file:
+        file.write(RECT_ANNOTS)

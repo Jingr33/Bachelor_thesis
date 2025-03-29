@@ -1,9 +1,13 @@
-from moviepy.editor import ImageSequenceClip
+""" This script creates mp4 video from frames.
+"""
+
 import os
+from moviepy.editor import ImageSequenceClip
 
-img_folder = "frames"
-images = sorted([os.path.join(img_folder, img) for img in os.listdir(img_folder) if img.endswith('.jpg')])
+FRAMES_FOLDER = "frames"
+images = sorted([os.path.join(FRAMES_FOLDER, img) for img in os.listdir(FRAMES_FOLDER)
+                if img.endswith('.jpg')])
 
-fps = 30
-clip = ImageSequenceClip(images, fps=fps)
+FPS = 30
+clip = ImageSequenceClip(images, fps=FPS)
 clip.write_videofile('frames/video.mp4', codec='libx264')

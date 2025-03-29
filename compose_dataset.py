@@ -1,4 +1,5 @@
-"""This code compose YOLO dataset tree and add data to each section (train, validation, test).
+"""This code compose YOLO dataset tree and add data to each section 
+    (train, validation, test).
 """
 
 import os
@@ -7,10 +8,11 @@ import shutil
 ## CONFIGURATION ##
 SOURCE_FOLDER = "C:/bakalarka/future_dataset" # a location source folder
 DESTINATION_FOLDER = "C:/bakalarka/" # destination folder of a new dataset
-VAL_FOLDERS = ["vid30", "vid20", "vid33"] # number of images for validation
-TEST_FOLDERS = ["vid34", "vid19", "vid26"] # number of images for testing
+TRAIN_FOLDERS = ["vid17", "vid19", "vid20", "vid21", "vid23", "vid27", "vid31", "vid32", "vid33", "vid34", "vid35", "vid36", "vid39", "vid41"]
+VAL_FOLDERS = ["vid24", "vid25", "vid26"] # number of images for validation
+TEST_FOLDERS = ["vid28", "vid29", "vid30"] # number of images for testing
 
-DATASET_DIR = "dataset2"
+DATASET_DIR = "dataset4"
 SECTION_DIRS = ["valid", "test", "train"]
 SECTION_SUBDIRS = ["images", "labels"]
 
@@ -20,13 +22,13 @@ def _mkdir_dataset_tree ():
     for section_dir in SECTION_DIRS:
         for subdir in SECTION_SUBDIRS:
             target_path = os.path.join(DESTINATION_FOLDER, DATASET_DIR, section_dir, subdir)
-            if (not os.path.isdir(target_path)):
+            if not os.path.isdir(target_path):
                 os.makedirs(target_path, exist_ok = True)
     print("Strom vytvořen!")
 
 def _create_dataset() -> None:
     file_id = 0
-    for folder in os.listdir(SOURCE_FOLDER):
+    for folder in (TRAIN_FOLDERS + TEST_FOLDERS + VAL_FOLDERS):
         source_path = os.path.join(SOURCE_FOLDER, folder)
         target_path = _choose_target_folder(folder)
         file_id = _move_folder_content(source_path, target_path, file_id)
@@ -38,7 +40,7 @@ def _choose_target_folder(folder) -> str:
     elif folder in TEST_FOLDERS:
         folder_dir = "test"
     return os.path.join(DESTINATION_FOLDER, DATASET_DIR, folder_dir)
-      
+
 def _move_folder_content(source_path, target_path, next_file_id : int) -> None:
     enum_folder = list(os.listdir(os.path.join(source_path, SECTION_SUBDIRS[0])))
     count = 0
@@ -63,7 +65,25 @@ def _move_folder_content(source_path, target_path, next_file_id : int) -> None:
     print(f"Přidány soubory ze složky: {source_path}")
     return next_file_id
 
+def _create_dataset_content_file() -> None:    
+    file_content = "OBSAH DATASETU:\n"
     
+    file_content += "\nVALIDATION\n"
+    for val in VAL_FOLDERS:
+        file_content += val + "\n"
+
+    file_content += "\nTEST\n"
+    for test in TEST_FOLDERS:
+        file_content += test + "\n"
+
+    file_content += "\nTRAIN\n"
+    for train in TRAIN_FOLDERS:
+        file_content += train + "\n"
+
+    with open(os.path.join(DATASET_DIR, "co_je_v_datasetu.txt"), 'w', encoding='utf-8') as f:
+        f.write(file_content)
+
 _mkdir_dataset_tree()
 _create_dataset()
-print("HOTOVO!!!")
+_create_dataset_content_file()
+print("Dataset vytvořen!")

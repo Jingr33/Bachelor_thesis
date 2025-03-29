@@ -1,5 +1,4 @@
-dataset
-dataset2
+dataset*
 future_dataset
 models
 runs
@@ -10,3 +9,7 @@ jsons
 auto_annotater
 *.json
 config.yaml
+repair
+frames
+__*
+test
