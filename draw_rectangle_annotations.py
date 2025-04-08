@@ -7,7 +7,7 @@ sys.path.append(r"C:\\Users\\ingrj\\AppData\\Roaming\\Python\\Python312\\site-pa
 import cv2
 
 
-DATASET_PATH = "future_dataset/vid19"
+DATASET_PATH = "future_dataset/vid20"
 
 def _resize_image(raw_image) -> int:
     orig_h, orig_w, _ = raw_image.shape

@@ -6,10 +6,10 @@ sys.path.append(r"C:\\Users\\ingrj\\AppData\\Roaming\\Python\\Python312\\site-pa
 import shutil
 
 
-SOURCE_PATHS = (r"future_dataset/vid19_man",
-                r"future_dataset/vid19_corr",
-                r"future_dataset/vid19_auto")
-TARGET_PATH = r"future_dataset/vid19"
+SOURCE_PATHS = (r"future_dataset/vid20_man",
+                r"future_dataset/vid20_corr",
+                r"future_dataset/vid20_auto")
+TARGET_PATH = r"future_dataset/vid20"
 SUBDIRS = ["images", "labels"]
 
 for subdir in SUBDIRS:

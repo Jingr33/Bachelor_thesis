@@ -9,7 +9,7 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/dataset4/augmentation/test"
+SOURCE_PATH = r"C:\bakalarka\runs\dataset3\momentum"
 
 def load_training_results(train_folder : str) -> dict:
     """ Load training results folder and return dictionary with mAP50
