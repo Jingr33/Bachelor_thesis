@@ -1,5 +1,5 @@
 """This code compose YOLO dataset tree and add data to each section 
-    (train, validation, test).
+    (train, validation, test). 
 """
 
 import os

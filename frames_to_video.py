@@ -1,4 +1,4 @@
-""" This script creates mp4 video from frames.
+""" This script creates mp4 video from frames. 
 """
 
 import os

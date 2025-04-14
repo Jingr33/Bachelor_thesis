@@ -1,4 +1,4 @@
-""" This code converts json file with images and its annotations in YOLO DATASET format. 
+""" This code converts json  file with images and its annotations in YOLO DATASET format. 
 """
 
 import os

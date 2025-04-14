@@ -1,4 +1,4 @@
-""" This script  process results from YOLO training to overview table.
+""" This script  process results from YOLO training to overview table. 
 """
 
 import os

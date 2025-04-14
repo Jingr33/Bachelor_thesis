@@ -1,4 +1,4 @@
-""" This script display images from COCO json file.
+""" This script display images from COCO json file. 
 """
 
 import json
