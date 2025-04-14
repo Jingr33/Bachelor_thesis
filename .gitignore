@@ -1,4 +1,5 @@
 dataset*
+!dataset_counts.py
 future_dataset
 models
 runs

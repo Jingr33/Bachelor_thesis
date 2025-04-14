@@ -8,7 +8,7 @@ import numpy as np
 
 
 # folder with polygon annotations in txt files
-PATH = "future_dataset/vid19_corr/labels"
+PATH = "future_dataset/vid20_corr/bels"
 
 
 def _polygon2rectangle(annotation : str) -> str:
