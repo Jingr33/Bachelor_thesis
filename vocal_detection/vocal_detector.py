@@ -6,10 +6,10 @@ import numpy as np
 from ultralytics import YOLO
 
 
-MODEL = YOLO("vocal_detection/best.pt")
-IMG_FOLDER = "vocal_detection/hlasivka"
+MODEL = YOLO("nano93.pt")
+IMG_FOLDER = "254.jpg"
 
-image = cv.imread(IMG_FOLDER + ".png")
+image = cv.imread(IMG_FOLDER)
 results = MODEL.predict(image)
 
 colors = {
@@ -38,13 +38,15 @@ for result in results:
             x1, y1, x2, y2 = box.xyxy[0]  # Souřadnice detekovaného objektu
             cv.rectangle(image, (int(x1), int(y1)), (int(x2), int(y2)), color, 3)
 
-            cv.rectangle(image, (600, 670 + (COUNT + 1)*35), (1035, 670 + COUNT*35), color, -1)
+            cv.rectangle(image, (600, 610 + (COUNT + 1)*35), (1035, 610 + COUNT*35), color, -1)
             TEXT = f"{CLASS_NAME} {conf}"
-            cv.putText(image, TEXT, (605, 662 + (COUNT + 1)*35),
+            cv.putText(image, TEXT, (605, 602 + (COUNT + 1)*35),
                        cv.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2, cv.LINE_AA)
             COUNT += 1
 
-cv.imwrite(IMG_FOLDER + "_prediction.png", image)
+prediction_path = IMG_FOLDER.split('.')[0] + "_prediction." + IMG_FOLDER.split('.')[1]
+print(prediction_path)
+cv.imwrite(prediction_path, image)
 cv.imshow("predikce", image)
 cv.waitKey(0)
 cv.destroyAllWindows()

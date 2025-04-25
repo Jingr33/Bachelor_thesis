@@ -1,6 +1,7 @@
 """ This script  process results from YOLO training to overview table. 
 """
 
+import subprocess
 import os
 import sys
 sys.path.append(r"C:\\Users\\ingrj\\AppData\\Roaming\\Python\\Python312\\site-packages")
@@ -9,7 +10,12 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/dataset4/augmentation/test"
+SOURCE_PATH = "runs/dataset4/sizes"
+CREATE_CHART = True
+PARAMETER_NAME = ""
+X_AXIS_NAME = "velikost modelu"
+TITLE_PARAM_NAME = "velikostech modelu"
+X_AXIS_SCALE = '' # default = linear
 
 def load_training_results(train_folder : str) -> dict:
     """ Load training results folder and return dictionary with mAP50
@@ -25,7 +31,7 @@ def load_training_results(train_folder : str) -> dict:
 def create_excel(all_trainings : dict) -> None:
     """ Create excel table with comparsion of all trainings in source folder. """
     max_epochs = max(len(one_train["map50"]) for one_train in all_trainings.values())
-    df_dict = {'epocha' : [""] + list(range(1, max_epochs + 1)) + [""] + ["MAX"]}
+    df_dict = {'epocha' : [""] + list(range(1, max_epochs + 1)) + ["-"] + ["MAX"]}
 
     count = 0
     for name, data in all_trainings.items():
@@ -75,4 +81,8 @@ for train_folder_name in result_folders:
 
 # crate overview excel table
 create_excel(all_train_res)
-print("Overview file was crated successfully!")
+print("Overview file was created successfully!")
+
+if CREATE_CHART:
+    subprocess.run(["python", "bar_plot_module.py", SOURCE_PATH, 
+                    PARAMETER_NAME, X_AXIS_NAME, X_AXIS_SCALE, TITLE_PARAM_NAME])
