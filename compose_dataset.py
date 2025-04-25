@@ -49,16 +49,19 @@ def _move_folder_content(source_path, target_path, next_file_id : int) -> None:
         source_annot_name = f"{os.path.splitext(source_img_name)[0]}.txt"
         source_annot_file = os.path.join(source_path, SECTION_SUBDIRS[1], source_annot_name)
 
-        if os.path.isfile(source_img_file) and os.path.isfile(source_annot_file):
+        if os.path.isfile(source_img_file):
             prefix = next_file_id + count
             img_suffix = os.path.splitext(source_img_name)[1]
             target_img_name = f"{prefix}{img_suffix}"
-            target_annot_name = f"{prefix}.txt"
-
             img_target = os.path.join(target_path, SECTION_SUBDIRS[0], target_img_name)
-            annot_target = os.path.join(target_path, SECTION_SUBDIRS[1], target_annot_name)
             shutil.copy2(source_img_file, img_target)
+
+        if os.path.isfile(source_annot_file):
+            prefix = next_file_id + count
+            target_annot_name = f"{prefix}.txt"
+            annot_target = os.path.join(target_path, SECTION_SUBDIRS[1], target_annot_name)
             shutil.copy2(source_annot_file, annot_target)
+
         count += 1
 
     next_file_id += len(enum_folder) + 1

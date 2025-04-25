@@ -11,8 +11,8 @@ sys.path.append(r"C:\\Users\\ingrj\\AppData\\Roaming\\Python\\Python312\\site-pa
 from PIL import Image
 
 
-JSON_FILE = "C:/bakalarka/jsons/vid19c.json" # a source json file name
-TARGET_DIR = "C:/bakalarka/future_dataset/vid19_corr" # target path to directory with YOLO dataset
+JSON_FILE = "C:/bakalarka/jsons/vid20c.json" # a source json file name
+TARGET_DIR = "C:/bakalarka/future_dataset/vid20_corr" # target path to directory with YOLO dataset
 POLYGON_ANNOTS = True # true if annotation type of images is polygonal, false if rectangular
     # -> if true, change folder in polygons2rectangles.py
 
