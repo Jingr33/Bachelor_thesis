@@ -10,12 +10,12 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/dataset4/sizes"
+SOURCE_PATH = "runs/dataset4/learning_rates"
 CREATE_CHART = True
-PARAMETER_NAME = ""
-X_AXIS_NAME = "velikost modelu"
-TITLE_PARAM_NAME = "velikostech modelu"
-X_AXIS_SCALE = '' # default = linear
+PARAMETER_NAME = "lr"
+X_AXIS_NAME = "rychlost učení"
+TITLE_PARAM_NAME = "rychlostech učení"
+X_AXIS_SCALE = 'log' # default = linear
 
 def load_training_results(train_folder : str) -> dict:
     """ Load training results folder and return dictionary with mAP50
@@ -84,5 +84,5 @@ create_excel(all_train_res)
 print("Overview file was created successfully!")
 
 if CREATE_CHART:
-    subprocess.run(["python", "bar_plot_module.py", SOURCE_PATH, 
+    subprocess.run(["python", "scatter_plot_module.py", SOURCE_PATH, 
                     PARAMETER_NAME, X_AXIS_NAME, X_AXIS_SCALE, TITLE_PARAM_NAME])

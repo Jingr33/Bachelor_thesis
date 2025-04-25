@@ -45,13 +45,13 @@ if __name__ == "__main__":
     plt.gca().yaxis.set_major_formatter(formatter_x)
     plt.gca().xaxis.set_major_formatter(formatter_y)
 
-    plt.scatter(param_values, map50s, color='blue', label='@mAP50')
-    plt.scatter(param_values, map5095s, color='red', label='@mAP50:95')
+    plt.scatter(param_values, map50s, color='#1f77b4', label='@mAP50')
+    plt.scatter(param_values, map5095s, color='#d62728', label='@mAP50:95')
 
     plt.title(f"Porovnání metrik modelu při různých {TITLE_PARAMETER_NAME}")
     plt.xlabel(XNAME)
     plt.ylabel("@mAP50 / @mAP50:95")
-    plt.legend(loc='center left')
+    plt.legend(loc='lower left', framealpha=1)
     if XSCALE != "":
         plt.xscale(XSCALE)
 
