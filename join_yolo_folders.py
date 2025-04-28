@@ -1,4 +1,4 @@
-""" This script join more YOLO dataset forders with images and labels into one folder."""
+""" This script join  more YOLO dataset forders with images and labels into one folder."""
 
 import os
 import sys

@@ -1,5 +1,5 @@
 """ This script choose specified number of items from YOLO dataset and transfer it
-    into target folder.
+    into target folder. 
 """
 
 import os

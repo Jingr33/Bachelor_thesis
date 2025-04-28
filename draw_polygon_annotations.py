@@ -1,5 +1,5 @@
 """ This script displayes images with its POLYGONAL annotations from folder in YOLO format. 
-"""
+""" 
 
 import sys
 import os

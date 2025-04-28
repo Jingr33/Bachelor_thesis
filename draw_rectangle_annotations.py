@@ -1,5 +1,5 @@
 """ This script displayes images with its RECTANGLE annotations from folder in YOLO format. 
-"""
+""" 
 
 import sys
 import os

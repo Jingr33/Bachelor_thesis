@@ -1,5 +1,5 @@
 """ This code converts annotated images in jsons (COCO) to YOLO dataset format.
-"""
+""" 
 
 import os
 import sys

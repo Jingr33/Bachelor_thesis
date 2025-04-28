@@ -1,4 +1,4 @@
-""" Script for override polygons annotations to rectagle variant.
+""" Script for override polygons annotations to rectagle variant. 
 """
 
 import os
