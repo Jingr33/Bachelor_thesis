@@ -40,7 +40,7 @@ if __name__ == "__main__":
     map50s = [last_row[i] for i in range(1, len(last_row), 2) if last_row[i] is not None]
     map5095s = [last_row[j] for j in range(2, len(last_row), 2) if last_row[j] is not None]
 
-    formatter_x = ticker.FuncFormatter(lambda x, _: f"{x:.2f}".replace('.', ','))
+    formatter_x = ticker.FuncFormatter(lambda x, _: f"{x:.1f}".replace('.', ','))
     formatter_y = ticker.FuncFormatter(lambda x, _: f"{x:.2f}".replace('.', ','))
     plt.gca().yaxis.set_major_formatter(formatter_x)
     plt.gca().xaxis.set_major_formatter(formatter_y)
@@ -51,15 +51,15 @@ if __name__ == "__main__":
     plt.title(f"Porovnání metrik modelu při různých {TITLE_PARAMETER_NAME}")
     plt.xlabel(XNAME)
     plt.ylabel("@mAP50 / @mAP50:95")
-    plt.legend(loc='lower left', framealpha=1)
+    plt.legend(loc='center left', framealpha=1)
     if XSCALE != "":
         plt.xscale(XSCALE)
 
-    # for x, y in zip(param_values, map50s):
-    #     plt.text(x, y - 0.014, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+    for x, y in zip(param_values, map50s):
+        plt.text(x, y - 0.014, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
-    # for x, y in zip(param_values, map5095s):
-    #     plt.text(x, y + 0.008, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+    for x, y in zip(param_values, map5095s):
+        plt.text(x, y + 0.009, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
     ax = plt.gca()
     ax.spines["top"].set_visible(False)

@@ -10,12 +10,12 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/dataset4/learning_rates"
+SOURCE_PATH = "runs/dataset4/mosaics"
 CREATE_CHART = True
-PARAMETER_NAME = "lr"
-X_AXIS_NAME = "rychlost učení"
-TITLE_PARAM_NAME = "rychlostech učení"
-X_AXIS_SCALE = 'log' # default = linear
+PARAMETER_NAME = "mosaic"
+X_AXIS_NAME = "míra mozaikové augmentace"
+TITLE_PARAM_NAME = "hodnotách mozaikové augmentace"
+X_AXIS_SCALE = '' # default = linear
 
 def load_training_results(train_folder : str) -> dict:
     """ Load training results folder and return dictionary with mAP50
