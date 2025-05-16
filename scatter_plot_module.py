@@ -42,8 +42,8 @@ if __name__ == "__main__":
 
     formatter_x = ticker.FuncFormatter(lambda x, _: f"{x:.1f}".replace('.', ','))
     formatter_y = ticker.FuncFormatter(lambda x, _: f"{x:.2f}".replace('.', ','))
-    plt.gca().yaxis.set_major_formatter(formatter_x)
-    plt.gca().xaxis.set_major_formatter(formatter_y)
+    plt.gca().yaxis.set_major_formatter(formatter_y)
+    plt.gca().xaxis.set_major_formatter(formatter_x)
 
     plt.scatter(param_values, map50s, color='#1f77b4', label='@mAP50')
     plt.scatter(param_values, map5095s, color='#d62728', label='@mAP50:95')
@@ -56,10 +56,10 @@ if __name__ == "__main__":
         plt.xscale(XSCALE)
 
     for x, y in zip(param_values, map50s):
-        plt.text(x, y - 0.014, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+        plt.text(x, y - 0.014, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
     for x, y in zip(param_values, map5095s):
-        plt.text(x, y + 0.009, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+        plt.text(x, y + 0.009, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
     ax = plt.gca()
     ax.spines["top"].set_visible(False)

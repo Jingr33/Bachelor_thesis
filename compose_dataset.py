@@ -7,7 +7,7 @@ import shutil
 
 ## CONFIGURATION ##
 SOURCE_FOLDER = "C:/bakalarka/future_dataset" # a location source folder
-DESTINATION_FOLDER = "C:/bakalarka/" # destination folder of a new dataset
+DESTINATION_FOLDER = "C:/bakalarka/dataset_cross" # destination folder of a new dataset
 TRAIN_FOLDERS = ["vid17", "vid19", "vid20", "vid21", "vid23", "vid27", "vid31", "vid32", "vid33", "vid34", "vid35", "vid36", "vid39", "vid41"]
 VAL_FOLDERS = ["vid24", "vid25", "vid26"] # number of images for validation
 TEST_FOLDERS = ["vid28", "vid29", "vid30"] # number of images for testing
@@ -19,6 +19,7 @@ SECTION_SUBDIRS = ["images", "labels"]
 
 def _mkdir_dataset_tree ():
     """Make a database directory tree."""
+    os.makedirs(os.path.join(DESTINATION_FOLDER, DATASET_DIR), exist_ok=True)
     for section_dir in SECTION_DIRS:
         for subdir in SECTION_SUBDIRS:
             target_path = os.path.join(DESTINATION_FOLDER, DATASET_DIR, section_dir, subdir)

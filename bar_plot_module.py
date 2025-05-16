@@ -19,9 +19,12 @@ if __name__ == "__main__":
     sheet = workbook.active
     rows = list(sheet.iter_rows(values_only=True))
     model_names = [rows[0][i] for i in range(1, len(rows[0]), 2)]
+    
+    for i in range(len(model_names)):
+        model_names[i] = model_names[i].split('_')[-1]
 
     ########################
-    model_names = [model_names[2], model_names[3], model_names[1], model_names[0], model_names[4]]
+    # model_names = [model_names[2], model_names[3], model_names[1], model_names[0], model_names[4]]
     #######################xx
 
     last_row = []
@@ -38,8 +41,8 @@ if __name__ == "__main__":
     map5095s = [last_row[j] for j in range(2, len(last_row), 2) if last_row[j] is not None]
     
     #################xx
-    map50s = [map50s[2], map50s[3], map50s[1], map50s[0], map50s[4]]
-    map5095s = [map5095s[2], map5095s[3], map5095s[1], map5095s[0], map5095s[4]]
+    # map50s = [map50s[2], map50s[3], map50s[1], map50s[0], map50s[4]]
+    # map5095s = [map5095s[2], map5095s[3], map5095s[1], map5095s[0], map5095s[4]]
     ###################
 
 
@@ -53,20 +56,29 @@ if __name__ == "__main__":
     # Přidání popisků a titulků
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x:.2f}".replace('.', ',')))
     ax.set_ylabel('Hodnota metriky')
-    ax.set_xlabel('Verze modelu YOLOv11')
-    ax.set_title('Porovnání metrik modelů YOLO různých velikostí')
+    ax.set_xlabel('modelu YOLO11m')
+    ax.set_title('Výsledky tréninku finálního modelu metodou křížové validace')
     ax.set_xticks(x)
     ax.set_xticklabels(model_names)
-    ax.legend(framealpha=1)
+    ax.legend(loc = "lower center", framealpha=1)
 
     # Desetinné čárky v popiscích hodnot na sloupcích
-    for bar in bars1 + bars2:
+    for bar in bars1:
         height = bar.get_height()
         ax.annotate(f'{height:.3f}'.replace('.', ','),
                     xy=(bar.get_x() + bar.get_width() / 2, height),
                     xytext=(0, 3),  # výška popisku nad sloupcem
                     textcoords="offset points",
                     ha='center', va='bottom', fontsize=8)
+
+    for bar in bars2:
+        height = bar.get_height()
+        ax.annotate(f'{height:.3f}'.replace('.', ','),
+                    xy=(bar.get_x() + bar.get_width() / 2, height),
+                    xytext=(4, 3),  # výška popisku nad sloupcem
+                    textcoords="offset points",
+                    ha='center', va='bottom', fontsize=8)
+
 
     # Styl
     ax.spines['top'].set_visible(False)
