@@ -10,7 +10,7 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/final_m_optimized"
+SOURCE_PATH = "runs/final_m_default"
 CREATE_CHART = True
 PARAMETER_NAME = "dataset"
 X_AXIS_NAME = "partial datasets"
