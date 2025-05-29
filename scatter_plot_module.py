@@ -40,7 +40,7 @@ if __name__ == "__main__":
     map50s = [last_row[i] for i in range(1, len(last_row), 2) if last_row[i] is not None]
     map5095s = [last_row[j] for j in range(2, len(last_row), 2) if last_row[j] is not None]
 
-    formatter_x = ticker.FuncFormatter(lambda x, _: f"{x:.1f}".replace('.', ','))
+    formatter_x = ticker.FuncFormatter(lambda x, _: f"{x:.0f}".replace('.', ','))
     formatter_y = ticker.FuncFormatter(lambda x, _: f"{x:.2f}".replace('.', ','))
     plt.gca().yaxis.set_major_formatter(formatter_y)
     plt.gca().xaxis.set_major_formatter(formatter_x)
@@ -56,10 +56,10 @@ if __name__ == "__main__":
         plt.xscale(XSCALE)
 
     for x, y in zip(param_values, map50s):
-        plt.text(x, y - 0.014, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+        plt.text(x, y - 0.014, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
     for x, y in zip(param_values, map5095s):
-        plt.text(x, y + 0.009, f"[{x:.2f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
+        plt.text(x, y + 0.009, f"[{x:.0f}; {y:.2f}]".replace('.', ','), ha='left', color='black', fontsize=8)
 
     ax = plt.gca()
     ax.spines["top"].set_visible(False)

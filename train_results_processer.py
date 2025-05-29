@@ -10,11 +10,11 @@ from openpyxl.styles import Alignment
 from openpyxl.utils import get_column_letter
 
 
-SOURCE_PATH = "runs/final_m_default"
+SOURCE_PATH = r"runs\dataset4\img_sizes"
 CREATE_CHART = True
-PARAMETER_NAME = "dataset"
-X_AXIS_NAME = "partial datasets"
-TITLE_PARAM_NAME = "parciálních datasetech"
+PARAMETER_NAME = "imgsz"
+X_AXIS_NAME = "rozlišení snímku v px"
+TITLE_PARAM_NAME = "rozlišeních snímku"
 X_AXIS_SCALE = '' # default = linear
 
 def load_training_results(train_folder : str) -> dict:
@@ -84,5 +84,5 @@ create_excel(all_train_res)
 print("Overview file was created successfully!")
 
 if CREATE_CHART:
-    subprocess.run(["python", "bar_plot_module.py", SOURCE_PATH, 
+    subprocess.run(["python", "scatter_plot_module.py", SOURCE_PATH, 
                     PARAMETER_NAME, X_AXIS_NAME, X_AXIS_SCALE, TITLE_PARAM_NAME])
